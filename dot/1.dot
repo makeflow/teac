@@ -1,0 +1,40 @@
+digraph example1 {
+  resolveAlias -> getTargetOfAliasDeclaration
+  resolveAlias -> getDeclarationOfAliasSymbol
+
+  getDeclarationOfAliasSymbol -> isAliasSymbolDeclaration
+
+  getTargetOfAliasDeclaration -> getTargetOfImportEqualsDeclaration
+  getTargetOfAliasDeclaration -> getTargetOfImportClause
+  getTargetOfAliasDeclaration -> getTargetOfNamespaceImport
+  getTargetOfAliasDeclaration -> getTargetOfExportSpecifier
+
+  getTargetOfImportEqualsDeclaration -> resolveExternalModuleSymbol
+
+  getTargetOfImportClause -> resolveExternalModuleSymbol
+
+  getTargetOfNamespaceImport -> resolveExternalModuleName
+  getTargetOfNamespaceImport -> resolveESModuleSymbol
+
+  getTargetOfExportSpecifier -> getExternalModuleMember
+  getTargetOfExportSpecifier -> resolveEntityName
+  getExternalModuleMember -> resolveESModuleSymbol
+  getExternalModuleMember -> getExportOfModule
+
+  getExportOfModule -> resolveSymbol
+  getExportOfModule -> getExportsOfSymbol
+
+  getExportsOfSymbol -> getExportsOfModule
+
+  getExportsOfModule -> getExportsOfModuleWorker
+
+  resolveESModuleSymbol -> resolveExternalModuleSymbol
+
+  resolveExternalModuleSymbol -> resolveSymbol
+  resolveExternalModuleSymbol -> getCommonJsExportEquals
+  resolveExternalModuleSymbol -> getMergedSymbol
+
+  resolveSymbol -> resolveAlias
+
+
+}

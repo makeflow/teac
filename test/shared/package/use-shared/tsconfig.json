@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "importHelpers": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "stripInternal": true,
+
+    "strict": true,
+    "strictFunctionTypes": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "newLine": "LF",
+    "composite": true,
+
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "types": [],
+    "jsx": "react",
+    "experimentalDecorators": true,
+
+    "baseUrl": ".",
+
+    "outDir": "../lib"
+  },
+  "references": [{"path": "../shared/src"}]
+}

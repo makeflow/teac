@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig-base",
+  "compilerOptions": {
+      "outFile": "../../built/local/teac.out.js",
+      "sourceMap": true,
+      "lib": ["es2015", "DOM"],
+      "types": ["node", "lodash"],
+      "noUnusedParameters": false,
+      "noUnusedLocals": false
+  },
+  "references": [
+      { "path": "../compiler", "prepend": true },
+      { "path": "../services", "prepend": true },
+      { "path": "../jsTyping", "prepend": true },
+  ],
+  "exclude": ["./@main.ts"]
+}

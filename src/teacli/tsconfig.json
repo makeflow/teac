@@ -1,0 +1,15 @@
+{
+    "extends": "../tsconfig-noncomposite-base",
+    "compilerOptions": {
+        "outFile": "../../built/local/teacli.js",
+        "sourceMap": true,
+        "lib": ["es2015", "DOM"],
+        "types": ["node", "lodash"],
+    },
+    "files": [
+        "teacli.ts"
+    ],
+    "references": [
+        { "path": "../teac", "prepend": true }
+    ]
+}
